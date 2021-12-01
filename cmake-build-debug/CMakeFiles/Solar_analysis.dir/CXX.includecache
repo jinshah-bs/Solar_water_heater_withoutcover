@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/HTC.cpp
+HTC.h
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/HTC.h
+air_properties.h
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/air_properties.h
+cmath
+-
+
 /home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/HTC.h
 bits/stdc++.h
 -
@@ -14,8 +22,22 @@ mat_prop.h
 vector
 -
 
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/TDMA.cpp
+TDMA.h
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/TDMA.h
+
 /home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/TDMA.h
 vector
+-
+
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Write_data.cpp
+Write_data.h
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Write_data.h
+iostream
+-
+fstream
+-
+sstream
 -
 
 /home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Write_data.h
@@ -23,6 +45,8 @@ vector
 -
 string
 -
+
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/air_properties.h
 
 /home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/main.cpp
 bits/stdc++.h
@@ -40,9 +64,31 @@ HTC.h
 Write_data.h
 /home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Write_data.h
 
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/mat_prop.cpp
+mat_prop.h
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/mat_prop.h
+cmath
+-
+vector
+-
+
 /home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/mat_prop.h
 vector
 -
+
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/read_data.cpp
+string
+-
+vector
+-
+sstream
+-
+iostream
+-
+fstream
+-
+read_data.h
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/read_data.h
 
 /home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/read_data.h
 vector

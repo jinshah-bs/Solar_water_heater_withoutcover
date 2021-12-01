@@ -11,30 +11,30 @@
 				<Option working_dir="/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Solar_analysis">
@@ -44,19 +44,18 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0/x86_64-unknown-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/include"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 Solar_analysis"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 Solar_analysis"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Solar_analysis/fast">
@@ -66,19 +65,18 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0/x86_64-unknown-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/include"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 Solar_analysis/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 Solar_analysis/fast"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>

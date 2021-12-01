@@ -122,6 +122,7 @@ int main()
             });
             error_T = std::max(*std::max_element(error.begin(), error.end()), error_T);
             std::cout << "Error in T is " << error_T << "at iteration" << nloop << "and n_inner" << ninner <<std::endl;
+            Tf = Tfi;
             nloop++;
         }
 
