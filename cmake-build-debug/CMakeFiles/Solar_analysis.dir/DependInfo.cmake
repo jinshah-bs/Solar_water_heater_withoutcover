@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/thinkcomputational/CLionProjects/Solar_analysis/HTC.cpp" "/home/thinkcomputational/CLionProjects/Solar_analysis/cmake-build-debug/CMakeFiles/Solar_analysis.dir/HTC.cpp.o"
-  "/home/thinkcomputational/CLionProjects/Solar_analysis/TDMA.cpp" "/home/thinkcomputational/CLionProjects/Solar_analysis/cmake-build-debug/CMakeFiles/Solar_analysis.dir/TDMA.cpp.o"
-  "/home/thinkcomputational/CLionProjects/Solar_analysis/Write_data.cpp" "/home/thinkcomputational/CLionProjects/Solar_analysis/cmake-build-debug/CMakeFiles/Solar_analysis.dir/Write_data.cpp.o"
-  "/home/thinkcomputational/CLionProjects/Solar_analysis/main.cpp" "/home/thinkcomputational/CLionProjects/Solar_analysis/cmake-build-debug/CMakeFiles/Solar_analysis.dir/main.cpp.o"
-  "/home/thinkcomputational/CLionProjects/Solar_analysis/mat_prop.cpp" "/home/thinkcomputational/CLionProjects/Solar_analysis/cmake-build-debug/CMakeFiles/Solar_analysis.dir/mat_prop.cpp.o"
-  "/home/thinkcomputational/CLionProjects/Solar_analysis/read_data.cpp" "/home/thinkcomputational/CLionProjects/Solar_analysis/cmake-build-debug/CMakeFiles/Solar_analysis.dir/read_data.cpp.o"
+  "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/HTC.cpp" "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/Solar_analysis.dir/HTC.cpp.o"
+  "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/TDMA.cpp" "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/Solar_analysis.dir/TDMA.cpp.o"
+  "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Write_data.cpp" "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/Solar_analysis.dir/Write_data.cpp.o"
+  "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/main.cpp" "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/Solar_analysis.dir/main.cpp.o"
+  "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/mat_prop.cpp" "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/Solar_analysis.dir/mat_prop.cpp.o"
+  "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/read_data.cpp" "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/Solar_analysis.dir/read_data.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

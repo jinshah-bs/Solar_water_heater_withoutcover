@@ -1,3 +1,3 @@
-/home/thinkcomputational/CLionProjects/Solar_analysis/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/thinkcomputational/CLionProjects/Solar_analysis/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/thinkcomputational/CLionProjects/Solar_analysis/cmake-build-debug/CMakeFiles/Solar_analysis.dir
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/Solar_analysis.dir

@@ -68,7 +68,8 @@ int main()
     int dwrite = 300/static_cast<int>(dt);
     int nouter = 1,
         ninner = 1,
-        ntheta = 1;
+        ntheta = 1,
+        nloop = 0;
     double q, w, Tamb, Ki, theta, h_mul;
     std::vector<double> DT(n,0.0);
     while (nouter<140){
@@ -91,6 +92,7 @@ int main()
         DT[0] = (K[1]*Tf[1] - (K[1] + K[0])*Tf[0] + K[0]*Tf[0])/dx/dx; // Change Tf[0] with outlet temperature
         DT[n-1] = (-K[n-1]*Tf[n-1] + K[n-2]*Tf[n-2])/dx/dx; // Change Tf[0] with outlet temperature
         // loop Starts here
+        nloop = 1;
         while (error_T > 1.0){
             // Solve for absorber
             for (int i = 0; i < n; ++i) {
@@ -101,7 +103,7 @@ int main()
                 d[i] = Po/Aa *(q + htca[i]*Tamb + htcf[i]*Tf[i] + htcr[i]* skyT(Tamb)) + rhoAB*cpAB*Tao[i]/dt;
             }
             // Boundary condition
-            solve(c, a, b, d, Ta);
+            solve(c, a, b, d, Tai);
             std::transform(Ta.begin(), Ta.end(), Tai.begin(), error.begin(), [&](double l, double r)
             {
                 return std::abs(l - r);
@@ -119,6 +121,8 @@ int main()
                 return std::abs(l - r);
             });
             error_T = std::max(*std::max_element(error.begin(), error.end()), error_T);
+            std::cout << "Error in T is " << error_T << "at iteration" << nloop << "and n_inner" << ninner <<std::endl;
+            nloop++;
         }
 
         //calculate for Tank.
@@ -147,6 +151,7 @@ int main()
         if (ntheta > static_cast<int>(3600.0/dt)){
             ntheta = 1;
         }
+        std::cout << "max abs T" << *std::max_element(Ta.begin(), Ta.end()) << std::endl;
     }
 
 }
