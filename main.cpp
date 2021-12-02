@@ -9,8 +9,8 @@ double eps_ab = 0.9,
        alpha_ab = 0.9,
        StefanConst = 5.67e-8;
 double l = 2.5,
-        Di = 0.02675,
-        Do = 0.02355,
+        Di = 0.02355,
+        Do = 0.02675,
         CR = 33;
 int n = 50;
 double mdot, dx, lpm;
@@ -55,8 +55,9 @@ int main()
            cpAB = 3850;
 
     /* here the equation is such that c*x(i-1) + a*x(i) + b*x(i+1) = d */
-    std::vector<double> a(n,0.0), b(n,-kAB/dx/dx), c(n, -kAB/dx/dx), d(n, 0.0);
-    c[0] = 0.0; b[n-1] = 0.0; //bundary conditoin
+    std::vector<double> a(n,2.0*kAB*dt/dx/dx + rhoAB*cpAB), b(n,-kAB*dt/dx/dx),
+                        c(n, -kAB*dt/dx/dx), d(n, 0.0);
+    c[0] = 0.0; b[n-1] = 0.0, a[0] = a[n-1] = a[0] - kAB*dt/dx/dx; //bundary conditoin
     std::vector<double> htcf(n, 0.0), htca(n, 0.0), htcr(n,0.0);
     std::vector<double> Tfo = Tf,
                         Tfi = Tf,
@@ -70,7 +71,7 @@ int main()
         ninner = 1,
         ntheta = 1,
         nloop = 0;
-    double q, w, Tamb, Ki, theta, h_mul;
+    double q, w, Tamb, Ki, theta, h_mul, q_loss_tank;
     std::vector<double> DT(n,0.0);
     while (nouter<140){
         Ki = -2.2307e-4 *theta - 1.1e-4 * pow(theta, 2.0)  + 3.18596e-6 * pow(theta, 3.0) - 4.85509e-8 * pow(theta, 4.0);
@@ -83,8 +84,9 @@ int main()
         updateThermalProp(rho, K, Cp, Tf);
         double error_T = 10.0;
         std::vector<double> error(n,0.0);
+
         // Inner loop
-        h[0] = 12580; // Change this value
+        h[0] = ht[nt-1] - calculateHloss(std::fabs(Tamb-Tt[nt-1]), 7.0, mdot); // Change this value
         // Update the diffusion term
         for (int i = 1; i < n-1; ++i) {
             DT[i] = (K[i+1]*Tf[i+1] - (K[i+1] + K[i])*Tf[i] + K[i-1]*Tf[i-1])/dx/dx;
@@ -92,15 +94,14 @@ int main()
         DT[0] = (K[1]*Tf[1] - (K[1] + K[0])*Tf[0] + K[0]*Tf[0])/dx/dx; // Change Tf[0] with outlet temperature
         DT[n-1] = (-K[n-1]*Tf[n-1] + K[n-2]*Tf[n-2])/dx/dx; // Change Tf[0] with outlet temperature
         // loop Starts here
+        updateHTCF(Tf, Ta, htcf);
+        updateHTCA(Ta, w, Tamb, htca);
+        updateHTCR(Ta, Tamb, htcr);
         nloop = 1;
         while (error_T > 1.0){
             // Solve for absorber
             for (int i = 0; i < n; ++i) {
-                updateHTCF(Tf, Ta, htcf);
-                updateHTCA(Ta, w, Tamb, htca);
-                updateHTCR(Ta, Tamb, htcr);
-                a[i] = -(b[i] + c[i]) + rhoAB*cpAB/dt + htca[i] + htcf[i] + htcr[i];
-                d[i] = Po/Aa *(q + htca[i]*Tamb + htcf[i]*Tf[i] + htcr[i]* skyT(Tamb)) + rhoAB*cpAB*Tao[i]/dt;
+                d[i] = Po/Aa *(q - htca[i]*(Tao[i] - Tamb) - htcr[i]*(Tao[i]-Tamb))*dt - Pi*htcf[i]*(Tao[i]-Tfo[i])*dt/Aa + rhoAB*cpAB*Tao[i];
             }
             // Boundary condition
             solve(c, a, b, d, Tai);
@@ -113,7 +114,7 @@ int main()
             // Solve fluid domain
             for (int i = 1; i < n; ++i) {
                 h_mul = 1.0/(rho[i] + mdot*dt/Vi);
-                h[i] = (rho[i] * ho[i] + (mdot*dt/Vi)*h[i-1] + DT[i]*dt + htcf[i]*(Ta[i] - Tfo[i])*Pi*dt/Ac)*h_mul;
+                h[i] = (rho[i]*ho[i] + (mdot*dt/Vi)*h[i-1] + DT[i]*dt + htcf[i]*(Tao[i] - Tfo[i])*Pi*dt/Ac)*h_mul;
             }
             Tfi = EnthalpyToTemp(h);
             std::transform(Tf.begin(), Tf.end(), Tfi.begin(), error.begin(), [&](double l, double r)
@@ -128,18 +129,19 @@ int main()
 
         //calculate for Tank.
         hto = ht;
+        ht[0] = h[n-1] - calculateHloss(std::fabs(Ta[n-1]-Tamb), 3.0, mdot);
         updateThermalProp(rhoT, KT, CpT, Tt);
         for (int i = 1; i < nt-1; ++i) {
-            DT[i] = (K[i+1]*Tt[i+1] - (K[i+1] + K[i])*Tt[i] + K[i-1]*Tt[i-1])/dxT/dxT;
+            DT[i] = (KT[i+1]*Tt[i+1] - (KT[i+1] + KT[i])*Tt[i] + KT[i-1]*Tt[i-1])/dxT/dxT;
         }
-        DT[0] = (K[1]*Tt[1] - (K[1] + K[0])*Tt[0] + K[0]*Tt[0])/dxT/dxT; // Change Tf[0] with outlet temperature
-        DT[n-1] = (-K[n-1]*Tt[n-1] + K[n-2]*Tt[n-2])/dxT/dxT; // Change Tf[0] with outlet temperature
+        DT[0] = (KT[1]*Tt[1] - (KT[1] + KT[0])*Tt[0] + KT[0]*Tt[0])/dxT/dxT; // Change Tf[0] with outlet temperature
+        DT[nt-1] = (-KT[nt-1]*Tt[nt-1] + KT[nt-2]*Tt[nt-2])/dxT/dxT; // Change Tf[0] with outlet temperature
         for (int i = 1; i < nt; ++i) {
-            h_mul = 1.0/(rho[i] + mdot*dt/Vi);
+            h_mul = 1.0/(rhoT[i] + mdot*dt/Vt);
+            q_loss_tank = 11.3048* pow(Tt[i] - Tamb, 0.2823)*mdot*dt/At;
             ht[i] = (rhoT[i] * hto[i] + (mdot*dt/Vt)*ht[i-1] + DT[i]*dt)*h_mul;
         }
-        Tt = EnthalpyToTemp(hto);
-
+        Tt = EnthalpyToTemp(ht);
         ninner += 1;
         ntheta += 1;
         if (ninner > 300.0/dt){

@@ -125,8 +125,8 @@ void updateHTCR(std::vector<double> Ta, double Tamb,
     }
 }
 
-double calculateHloss(double dT, double L) {
+double calculateHloss(double dT, double L, double &mdot) {
     //L in meter, dT in temperature difference
-    return (0.18146*dT - 1.6209)*L;
+    return (0.156*dT)*L*mdot;
 }
 

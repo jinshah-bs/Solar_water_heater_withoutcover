@@ -6,13 +6,14 @@
 #include <cmath>
 #include <vector>
 double calcTemp(double h) {
-    return 7.81408e-8 * pow(h,3.0) - 2.2223e-4 * pow(h,2.0) + 0.55 * h - 17.0745;
+    double T = 6.8539e-17 * pow(h,3.0) - 2.0833e-10 * pow(h,2.0) + 5.436e-4 * h - 16.6521;
+    return T;
 }
 
 std::vector<double> EnthalpyToTemp(std::vector<double> h) {
     std::vector<double>T;
     for (auto i:h){
-        T.push_back(calcTemp(i/1000.0));
+        T.push_back(calcTemp(i));
     }
     return T;
 }
@@ -76,6 +77,6 @@ double mu(double T) {
 }
 
 double TempToEnthalpy(double T) {
-    double h = -5.3268e-8 * pow(h, 3.0) + 1.7913e-3 * pow(h, 2.0) + 1.83415 * h + 32.06383;
-    return h*1000;
+    double h = 1.8436e-4 *pow(T, 3.0) + 1.645175*pow(T, 2.0) + 1857.6064*T + 31438.1971;
+    return h;
 }

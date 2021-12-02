@@ -14,7 +14,7 @@ void write(std::vector<double> data, int time, const std::string filename) {
     min << time;
     folder = "mkdir -p Results/" + min.str();
     system(folder.c_str()); // Creates the directory
-    fNAME = "Results/" + min.str() +  "/" + filename + ".csv";
+    fNAME = "Results/" + min.str() +  "/" + filename + ".txt";
     files.open(fNAME.c_str(), std::ios::out);
     for (auto item: data) {
         files << item << std::endl;
