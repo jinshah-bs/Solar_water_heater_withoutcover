@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Write_data.cpp
+Write_data.h
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Write_data.h
+iostream
+-
+fstream
+-
+sstream
+-
+
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Write_data.h
+vector
+-
+string
+-
+
