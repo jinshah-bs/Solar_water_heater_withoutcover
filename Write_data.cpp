@@ -21,3 +21,34 @@ void write(std::vector<double> data, int time, const std::string filename) {
     }
     files.close();
 }
+
+void write(std::vector<std::vector<double>> data, std::vector<double> time, const std::string filename) {
+    std::string folder, Fname;
+    std::ofstream files;
+    folder = "mkdir -p Results";
+    system(folder.c_str());
+    Fname = "Results/" + filename + ".csv";
+    unsigned int N = time.size();
+    files.open(Fname.c_str(), std::ios::out);
+    for (auto t:time) {
+        files << "t= " << t << " , ";
+    }
+    files << std::endl;
+    for (int i = 0; i < data[0].size(); ++i) {
+        for (int j = 0; j < N; ++j) {
+            files << data[j][i] << " , ";
+        }
+        files <<std::endl;
+    }
+    files.close();
+}
+
+void write(std::vector<double> data, const std::string filename) {
+    std::string folder, Fname;
+    std::ofstream files;
+    folder = "mkdir -p Results";
+    system(folder.c_str());
+    Fname = "Results/" + filename + ".csv";
+
+
+}

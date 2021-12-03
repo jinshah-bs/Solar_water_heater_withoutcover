@@ -64,15 +64,7 @@ void updateThermalProp(std::vector<double> &rho,
 }
 
 double mu(double T) {
-    std::vector<double>C = {5.99e-16, -8.5072e-13,
-                            5.04056e-10, -1.61879e-7,
-                            3.06161e-5, -3.47386e-3,
-                            0.231286, -8.45598, 141.571};
-    double sum = 0;
-
-    for (int i=0; i<C.size(); ++i){
-        sum = sum + C[8-i]* pow(T, static_cast<double>(i));
-    }
+    double sum = 119.1*exp(-0.07702*T) + 23.67* exp(-0.02033*T);
     return sum*0.001;
 }
 

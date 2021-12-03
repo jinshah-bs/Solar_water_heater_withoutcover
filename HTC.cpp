@@ -130,3 +130,11 @@ double calculateHloss(double dT, double L, double &mdot) {
     return (0.156*dT)*L*mdot;
 }
 
+double calcQloss(std::vector<double> T, double Tr, std::vector<double> htc) {
+    double sum = 0.0;
+    for (int i = 0; i < T.size(); ++i) {
+        sum += htc[i]*(T[i] - Tr);
+    }
+    return sum;
+}
+

@@ -7,4 +7,8 @@
 #include <vector>
 #include <string>
 void write(std::vector<double> data, int time, const std::string filename);
+void write(std::vector<std::vector<double>> data,
+           std::vector<double>time,
+           const std::string filename);
+void write(std::vector<double> data, const std::string filename);
 #endif //SOLAR_ANALYSIS_WRITE_DATA_H

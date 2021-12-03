@@ -11,16 +11,18 @@ double eps_ab = 0.9,
 double l = 2.5,
         Di = 0.02355,
         Do = 0.02675,
-        CR = 33;
+        CR = 13;
 int n = 50;
 double mdot, dx, lpm;
 std::vector <std::vector<double>> MetData;
-double t = 0, dt = 5.0;
+double t = 0, dt = 1.0;
 double Ac, Aa, Pi, Po, Vi;
 //Details of tank
 double Dt = 0.3,
        Lt = 0.707;
 int nt = 10;
+std::vector<std::vector<double>> outabs, outFluid, outtank, outdata;
+std::vector<double>outtime;
 int main()
 {
     //input whether data
@@ -73,6 +75,11 @@ int main()
         nloop = 0;
     double q, w, Tamb, Ki, theta, h_mul, q_loss_tank;
     std::vector<double> DT(n,0.0);
+    outFluid.emplace_back(Tf);
+    outabs.emplace_back(Ta);
+    outtank.emplace_back(Tt);
+    outtime.emplace_back(0.0);
+    outdata.emplace_back(std::vector<double>{10, 12, 13, 14});
     while (nouter<140){
         Ki = -2.2307e-4 *theta - 1.1e-4 * pow(theta, 2.0)  + 3.18596e-6 * pow(theta, 3.0) - 4.85509e-8 * pow(theta, 4.0);
         Ki = std::max(0.0, std::min(1.0, 1.0 + Ki));
@@ -101,7 +108,7 @@ int main()
         while (error_T > 1.0){
             // Solve for absorber
             for (int i = 0; i < n; ++i) {
-                d[i] = Po/Aa *(q - htca[i]*(Tao[i] - Tamb) - htcr[i]*(Tao[i]-Tamb))*dt - Pi*htcf[i]*(Tao[i]-Tfo[i])*dt/Aa + rhoAB*cpAB*Tao[i];
+                d[i] = Po/Aa *(q - htca[i]*(Tao[i] - Tamb) - htcr[i]*(Tao[i]- skyT(Tamb)))*dt - Pi*htcf[i]*(Tao[i]-Tfo[i])*dt/Aa + rhoAB*cpAB*Tao[i];
             }
             // Boundary condition
             solve(c, a, b, d, Tai);
@@ -145,16 +152,28 @@ int main()
         ninner += 1;
         ntheta += 1;
         if (ninner > 300.0/dt){
-            write(Ta, nouter*5, "T_absorber");
-            write(Tf, nouter*5, "T_fluid");
-            write(Tt, nouter*5, "T_tank");
+//            write(Ta, nouter*5, "T_absorber");
+//            write(Tf, nouter*5, "T_fluid");
+//            write(Tt, nouter*5, "T_tank");
+            outFluid.emplace_back(Tf);
+            outabs.emplace_back(Ta);
+            outtank.emplace_back(Tt);
+            outtime.emplace_back(nouter*5.0);
             ninner = 0;
             nouter += 1;
         }
         if (ntheta > static_cast<int>(3600.0/dt)){
             ntheta = 1;
         }
-        std::cout << "max abs T" << *std::max_element(Ta.begin(), Ta.end()) << std::endl;
+        std::cout << "max abs T " << *std::max_element(Tf.begin(), Tf.end()) << std::endl;
+        std::cout << "outer iterator is " << nouter << std::endl;
+        std::cout << "Efficiency of the system is " << mdot*(h[n-1] - h[0])/(q*Pi*Do*l/0.82340/Ki/alpha_ab)
+                  << std::endl;
+        std::cout << "-------------------------------------------------" << std::endl;
     }
+    write(outFluid, outtime, "Fluid_temperature");
+    write(outabs, outtime, "Absorber_temperature");
+    write(outtank, outtime, "Tank_temperature");
+    write(outdata, outtime, "Data");
 
 }
