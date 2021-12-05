@@ -5,6 +5,7 @@
 #include "TDMA.h"
 #include "HTC.h"
 #include "Write_data.h"
+#include "Solar_data.h"
 double eps_ab = 0.9,
        alpha_ab = 0.9,
        StefanConst = 5.67e-8;
@@ -27,6 +28,7 @@ int main()
 {
     //input whether data
     MetData = parse2DCsvFile("Whether_data.csv");
+    GHItoDNI(274, 8.8932, 6.0, 5.0, MetData);
     //[i][0]= Tamb, [i][1]= wind, [i][2]=Q
     // Details of grid
     lpm = 40; //liter per minute

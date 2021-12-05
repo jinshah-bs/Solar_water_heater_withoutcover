@@ -5,7 +5,7 @@
 #ifndef SOLAR_ANALYSIS_SOLAR_DATA_H
 #define SOLAR_ANALYSIS_SOLAR_DATA_H
 #include <vector>
-double E0(double day_no);
+double E0(int day_no);
 std::vector<double>HourAngle(double t_start, double dt, unsigned int N);
 double declination(int day_no);
 double cosTheta(double delta, double phi, double omega);
