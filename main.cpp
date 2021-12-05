@@ -12,7 +12,7 @@ double eps_ab = 0.9,
 double l = 2.5,
         Di = 0.02355,
         Do = 0.02675,
-        CR = 13;
+        CR = 33;
 int n = 50;
 double mdot, dx, lpm;
 std::vector <std::vector<double>> MetData;
@@ -31,7 +31,7 @@ int main()
     GHItoDNI(274, 8.8932, 6.0, 5.0, MetData);
     //[i][0]= Tamb, [i][1]= wind, [i][2]=Q
     // Details of grid
-    lpm = 40; //liter per minute
+    lpm = 10; //liter per minute
     dx = l/n;
     mdot = lpm * calcDencity(MetData[0][0])/60/1000;
     Ac = PI*Di*Di/4.0;

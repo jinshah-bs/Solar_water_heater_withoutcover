@@ -8,10 +8,11 @@
 std::vector<double> HourAngle(double t_start, double dt,
                               unsigned int N) {
     std::vector<double>hr_angle;
-    double start = (12.0-t_start)*15.0;
+    double start = -(12.0-t_start)*15.0;
     double inter = 15.0*dt/60;
-    for (int i = 0; i < N; ++i) {
-        hr_angle.emplace_back((i+1)*inter);
+    hr_angle.emplace_back(start);
+    for (int i = 1; i < N; ++i) {
+        hr_angle.emplace_back(hr_angle[i-1] + inter);
     }
     return hr_angle;
 }
@@ -36,10 +37,10 @@ double cosTheta(double delta, double phi, double omega) {
 }
 
 void GHItoDNI(int D, double lat, double t_start, double dt,
-              std::vector<double> &q) {
+              std::vector<std::vector<double>> &q) {
     unsigned int n = q.size();
-    std::vector<double> It = q,
-                        omega(n);
+    std::vector<std::vector<double>> It = q;
+    std::vector<double> omega(n);
     omega = HourAngle(t_start, dt, n);
     double delta = declination(D);
     double kt, kd, I0, Eo, costheta;
@@ -47,15 +48,16 @@ void GHItoDNI(int D, double lat, double t_start, double dt,
     for (int i = 0; i < n; ++i) {
         costheta = cosTheta(delta, lat, omega[i]);
         I0 = Isc*Eo*costheta;
-        kt = It[i]/I0;
+        kt = It[i][2]/I0;
         if (kt <= 0.3){
-            kd = 1.02 - 0.254*kt + 0.0123*costheta;
-        } else if ( kt < 0.78){
-            kd = 1.4 - 1.749*kt + 0.177*costheta;
+            kd = 1.02 - 0.248*kt;
+        } else if ( kt <= 0.78){
+            kd = 1.450 - 1.670*kt;
         } else{
-            kd = 0.486*kt - 0.182*costheta;
+            kd =0.147;
         }
-        q[i] = It[i]*(1 - kd);
+        if (kd > 1.0) kd = 1.0;
+        q[i][2] = It[i][2]*(1.0 - kd);
     }
 
 }

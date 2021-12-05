@@ -9,5 +9,5 @@ double E0(int day_no);
 std::vector<double>HourAngle(double t_start, double dt, unsigned int N);
 double declination(int day_no);
 double cosTheta(double delta, double phi, double omega);
-void GHItoDNI(int D, double lat, double t_start, double dt, std::vector<double> &q);
+void GHItoDNI(int D, double lat, double t_start, double dt, std::vector<std::vector<double>> &q);
 #endif //SOLAR_ANALYSIS_SOLAR_DATA_H

@@ -14,12 +14,6 @@ mat_prop.h
 vector
 -
 
-/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Solar_data.cpp
-Solar_data.h
-/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Solar_data.h
-math.h
--
-
 /home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Solar_data.h
 vector
 -
@@ -49,6 +43,8 @@ HTC.h
 /home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/HTC.h
 Write_data.h
 /home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Write_data.h
+Solar_data.h
+/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Solar_data.h
 
 /home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/mat_prop.h
 vector

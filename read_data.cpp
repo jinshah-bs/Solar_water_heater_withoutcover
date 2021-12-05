@@ -12,7 +12,7 @@ using namespace std;
 
 vector<vector<double>> parse2DCsvFile(string inputFileName) {
 
-    vector<vector<double> > data;
+    vector<vector<double>> data;
     ifstream inputFile(inputFileName);
     int l = 0;
 
