@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/HTC.cpp" "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/Solar_analysis.dir/HTC.cpp.o"
+  "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Solar_data.cpp" "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/Solar_analysis.dir/Solar_data.cpp.o"
   "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/TDMA.cpp" "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/Solar_analysis.dir/TDMA.cpp.o"
   "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Write_data.cpp" "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/Solar_analysis.dir/Write_data.cpp.o"
   "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/main.cpp" "/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/cmake-build-debug/CMakeFiles/Solar_analysis.dir/main.cpp.o"

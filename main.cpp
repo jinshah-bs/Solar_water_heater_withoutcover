@@ -91,7 +91,6 @@ int main()
         updateThermalProp(rho, K, Cp, Tf);
         double error_T = 10.0;
         std::vector<double> error(n,0.0);
-
         // Inner loop
         h[0] = ht[nt-1] - calculateHloss(std::fabs(Tamb-Tt[nt-1]), 7.0, mdot); // Change this value
         // Update the diffusion term

@@ -50,5 +50,4 @@ void write(std::vector<double> data, const std::string filename) {
     system(folder.c_str());
     Fname = "Results/" + filename + ".csv";
 
-
 }

@@ -88,6 +88,12 @@
 		<Unit filename="/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/HTC.h">
 			<Option target="Solar_analysis"/>
 		</Unit>
+		<Unit filename="/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Solar_data.cpp">
+			<Option target="Solar_analysis"/>
+		</Unit>
+		<Unit filename="/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/Solar_data.h">
+			<Option target="Solar_analysis"/>
+		</Unit>
 		<Unit filename="/home/thinkcomputational/CLionProjects/Solar_water_heater_withoutcover/TDMA.cpp">
 			<Option target="Solar_analysis"/>
 		</Unit>

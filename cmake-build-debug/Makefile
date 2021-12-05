@@ -153,6 +153,30 @@ HTC.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Solar_analysis.dir/build.make CMakeFiles/Solar_analysis.dir/HTC.cpp.s
 .PHONY : HTC.cpp.s
 
+Solar_data.o: Solar_data.cpp.o
+.PHONY : Solar_data.o
+
+# target to build an object file
+Solar_data.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Solar_analysis.dir/build.make CMakeFiles/Solar_analysis.dir/Solar_data.cpp.o
+.PHONY : Solar_data.cpp.o
+
+Solar_data.i: Solar_data.cpp.i
+.PHONY : Solar_data.i
+
+# target to preprocess a source file
+Solar_data.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Solar_analysis.dir/build.make CMakeFiles/Solar_analysis.dir/Solar_data.cpp.i
+.PHONY : Solar_data.cpp.i
+
+Solar_data.s: Solar_data.cpp.s
+.PHONY : Solar_data.s
+
+# target to generate assembly for a file
+Solar_data.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Solar_analysis.dir/build.make CMakeFiles/Solar_analysis.dir/Solar_data.cpp.s
+.PHONY : Solar_data.cpp.s
+
 TDMA.o: TDMA.cpp.o
 .PHONY : TDMA.o
 
@@ -285,6 +309,9 @@ help:
 	@echo "... HTC.o"
 	@echo "... HTC.i"
 	@echo "... HTC.s"
+	@echo "... Solar_data.o"
+	@echo "... Solar_data.i"
+	@echo "... Solar_data.s"
 	@echo "... TDMA.o"
 	@echo "... TDMA.i"
 	@echo "... TDMA.s"

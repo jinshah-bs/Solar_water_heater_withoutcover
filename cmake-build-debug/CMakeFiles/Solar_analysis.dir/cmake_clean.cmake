@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Solar_analysis.dir/HTC.cpp.o"
+  "CMakeFiles/Solar_analysis.dir/Solar_data.cpp.o"
   "CMakeFiles/Solar_analysis.dir/TDMA.cpp.o"
   "CMakeFiles/Solar_analysis.dir/Write_data.cpp.o"
   "CMakeFiles/Solar_analysis.dir/main.cpp.o"
