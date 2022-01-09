@@ -49,14 +49,15 @@ void GHItoDNI(int D, double lat, double t_start, double dt,
         costheta = cosTheta(delta, lat, omega[i]);
         I0 = Isc*Eo*costheta;
         kt = It[i][2]/I0;
-        if (kt <= 0.3){
-            kd = 1.02 - 0.248*kt;
-        } else if ( kt <= 0.78){
-            kd = 1.450 - 1.670*kt;
-        } else{
-            kd =0.147;
-        }
-        if (kd > 1.0) kd = 1.0;
+        kd = std::min(1.0, 1/(1 + exp(-5.0 + 8.6*kt)));
+        // Will use Erbs Model
+//        if (kt <= 0.22){
+//            kd = 1.0 - 0.09*kt;
+//        } else if ( kt <= 0.8){
+//            kd = 0.9511 - 0.1604*kt + 4.388* pow(kt,2.0) - 16.638* pow(kt,3.0) + 12.336* pow(kt,4.0);
+//        } else{
+//            kd =0.165;
+//        }
         q[i][2] = It[i][2]*(1.0 - kd);
     }
 

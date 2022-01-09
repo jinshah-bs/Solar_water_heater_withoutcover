@@ -71,10 +71,10 @@ void updateHTCF(std::vector<double> Tf, std::vector<double> Ta,
         Re = mdot*Di/A/vis;
         Prf = vis*Cp[i]/K[i];
         if (Re<=2400){
-            double DbyL = Di/(dx*(1+i)*dx);
-            if (1/DbyL/Re/Prf < 0.05){
-                htcf[i] = NuH(Re,Prf, DbyL)* calcConductivity(Tf[i])/Di;
-            } else
+//            double DbyL = Di/(dx*(1+i)*dx);
+//            if (1/DbyL/Re/Prf < 0.05){
+//                htcf[i] = NuH(Re,Prf, DbyL)* calcConductivity(Tf[i])/Di;
+//            } else
                 htcf[i] = 3.66* calcConductivity(Tf[i])/Di;
         } else{
             Prs = mu(Ta[i])* calcSpHeat(Ta[i])/ calcConductivity(Ta[i]);
@@ -130,7 +130,7 @@ double calculateHloss(double dT, double L, double &mdot) {
     return (0.156*dT)*L*mdot;
 }
 
-double calcQloss(std::vector<double> T, double Tr, std::vector<double> htc) {
+double calcQloss(std::vector<double> &T, double Tr, std::vector<double> &htc) {
     double sum = 0.0;
     for (int i = 0; i < T.size(); ++i) {
         sum += htc[i]*(T[i] - Tr);

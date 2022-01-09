@@ -25,6 +25,6 @@ void updateHTCA(std::vector<double> Ta,
                 std::vector<double> &htca);
 void updateHTCR(std::vector<double> Ta, double Tamb, std::vector<double> &htcr);
 double calculateHloss(double dT, double L, double &mdot);
-double calcQloss(std::vector<double> T, double  Tr, std::vector<double> htc);
+double calcQloss(std::vector<double> &T, double Tr, std::vector<double> &htc);
 
 #endif //SOLAR_ANALYSIS_HTC_H
