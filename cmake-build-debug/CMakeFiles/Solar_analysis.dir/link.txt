@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Solar_analysis.dir/main.cpp.o CMakeFiles/Solar_analysis.dir/read_data.cpp.o CMakeFiles/Solar_analysis.dir/mat_prop.cpp.o CMakeFiles/Solar_analysis.dir/TDMA.cpp.o CMakeFiles/Solar_analysis.dir/HTC.cpp.o CMakeFiles/Solar_analysis.dir/Write_data.cpp.o CMakeFiles/Solar_analysis.dir/Solar_data.cpp.o -o Solar_analysis 
