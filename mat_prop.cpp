@@ -6,8 +6,7 @@
 #include <cmath>
 #include <vector>
 double calcTemp(double h) {
-    double T = 6.8539e-17 * pow(h,3.0) - 2.0833e-10 * pow(h,2.0) + 5.436e-4 * h - 16.6521;
-    return T;
+    return 2204 * pow(h, 1.01) - 8628;
 }
 
 std::vector<double> EnthalpyToTemp(std::vector<double> h) {
@@ -27,7 +26,7 @@ std::vector<double> dencity(std::vector<double> T) {
 }
 
 double calcDencity(double T) {
-    return -8.2737e-7 * pow(T, 3.0) + 1.405e-4 * pow(T,2.0) - 0.67915 * T + 885.1784;
+    return -8.2737e-7 * pow(T, 3.0) + 1.405e-4 * pow(T,2.0) - 0.67915 * T + 917.2;
 }
 
 std::vector<double> spHeat(std::vector<double> T) {
@@ -39,7 +38,7 @@ std::vector<double> spHeat(std::vector<double> T) {
 }
 
 double calcSpHeat(double T) {
-    return 2.00854e-6 * pow(T, 3.0) - 1.01954e-3 * pow(T,2.0) + 3.67468 * T + 1832.244;
+    return (-5.35 * pow(T,-0.7875) + 2.36)*1000;
 }
 
 std::vector<double> theConductivity(std::vector<double> T) {
@@ -51,7 +50,7 @@ std::vector<double> theConductivity(std::vector<double> T) {
 }
 
 double calcConductivity(double T) {
-    return 4.31257e-12 * pow(T, 3.0) - 4.98256e-9 * pow(T,2.0) - 1.15789e-4 * T + 0.130732;
+    return 7.288e-8 * pow(T, 3.0) + 7.1e-6 * pow(T,2.0) - 6.663e-4 * T + 0.14064;
 }
 
 void updateThermalProp(std::vector<double> &rho,
@@ -64,11 +63,9 @@ void updateThermalProp(std::vector<double> &rho,
 }
 
 double mu(double T) {
-    double sum = 119.1*exp(-0.07702*T) + 23.67* exp(-0.02033*T);
-    return sum*0.001;
+    return (120.22 * exp(-0.03056*T))/100;
 }
 
 double TempToEnthalpy(double T) {
-    double h = 1.8436e-4 *pow(T, 3.0) + 1.645175*pow(T, 2.0) + 1857.6064*T + 31438.1971;
-    return h;
+    return calcSpHeat(T)*T;
 }
